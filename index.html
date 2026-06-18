@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Mời Lễ Tốt Nghiệp – Lương Ngọc Hoàng Hải</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="assets/frame1.png" as="image">
+    <link rel="preload" href="assets/frame2.png" as="image">
+    <link rel="preload" href="assets/frame3.png" as="image">
+</head>
+<body>
+
+    <!-- Nút quay lại – fixed, nổi trên mọi màn hình -->
+    <button id="backBtn" class="back-btn" aria-label="Quay lại">
+        &#8592; Quay lại
+    </button>
+
+    <!-- Nút nhạc nền – fixed bottom-right -->
+    <button id="musicBtn" class="music-btn" aria-label="Bật/tắt nhạc">
+        <!-- <span class="music-icon">🔊</span>
+        <span class="music-label">Nhạc</span> -->
+    </button>
+
+    <!-- Nhạc nền -->
+    <audio id="bgMusic" src="assets/bgm.mp3" loop preload="auto"></audio>
+
+    <!-- ═══════════════════════════════════════
+         SCREEN 1 – Phong bì đóng
+    ═══════════════════════════════════════ -->
+    <div id="screen1" class="screen active">
+        <img src="assets/frame1.png" alt="Phong bì thư" class="envelope-img" id="envelopeImg">
+        <p class="click-hint">✉&nbsp;&nbsp;Nhấn để mở thư mời</p>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SCREEN 2 – Thư đã mở
+    ═══════════════════════════════════════ -->
+    <div id="screen2" class="screen">
+        <img src="assets/frame2.png" alt="Thư đã mở" class="letter-img" id="letterImg">
+        <button class="view-btn" id="viewBtn">Xem lời mời &rarr;</button>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         SCREEN 3 – Nội dung lời mời
+    ═══════════════════════════════════════ -->
+    <div id="screen3" class="screen">
+        <div class="s3-scroll">
+            <div class="glass-card" id="glassCard">
+
+                <div class="card-header">
+                    <div class="cap-icon">🎓</div>
+                    <h1 class="title-main">LỄ TỐT NGHIỆP</h1>
+                    <div class="title-sub">Trân trọng kính mời</div>
+                </div>
+
+                <h2 class="grad-name">Lương Ngọc Hoàng Hải</h2>
+
+                <div class="gold-divider"></div>
+
+                <div class="info-list">
+                    <div class="info-row">
+                        <span class="info-emoji">📅</span>
+                        <div class="info-body">
+                            <div class="info-label">Thời gian</div>
+                            <div class="info-val">11:00 &nbsp;|&nbsp; Thứ Năm, 25/06/2026</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-emoji">📍</span>
+                        <div class="info-body">
+                            <div class="info-label">Địa điểm</div>
+                            <div class="info-val">Trường Đại học Kinh tế – Đại học Đà Nẵng</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-emoji">📌</span>
+                        <div class="info-body">
+                            <div class="info-label">Địa chỉ</div>
+                            <div class="info-val">71 Ngũ Hành Sơn, Đà Nẵng</div>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-emoji">🎓</span>
+                        <div class="info-body">
+                            <div class="info-label">Chuyên ngành</div>
+                            <div class="info-val">Corporate Finance</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gold-divider"></div>
+
+                <div class="section-title">⏳ Đếm ngược đến ngày lễ</div>
+                <div class="countdown" id="countdown">
+                    <div class="cd-box">
+                        <span class="cd-num" id="cdDays">00</span>
+                        <span class="cd-lbl">Ngày</span>
+                    </div>
+                    <span class="cd-sep">:</span>
+                    <div class="cd-box">
+                        <span class="cd-num" id="cdHours">00</span>
+                        <span class="cd-lbl">Giờ</span>
+                    </div>
+                    <span class="cd-sep">:</span>
+                    <div class="cd-box">
+                        <span class="cd-num" id="cdMinutes">00</span>
+                        <span class="cd-lbl">Phút</span>
+                    </div>
+                    <span class="cd-sep">:</span>
+                    <div class="cd-box">
+                        <span class="cd-num" id="cdSeconds">00</span>
+                        <span class="cd-lbl">Giây</span>
+                    </div>
+                </div>
+
+                <div class="gold-divider"></div>
+
+                <div class="section-title">🗺 Bản đồ địa điểm</div>
+                <div class="map-wrap">
+                    <iframe
+                        title="Bản đồ Trường Đại học Kinh tế Đà Nẵng"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.3485361539224!2d108.23689847684136!3d16.047393484629048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142172023b9d4e1%3A0x4f62282c99b1c906!2sUniversity%20of%20Economics%20-%20The%20University%20of%20%C4%90%C3%A0%20N%E1%BA%B5ng!5e0!3m2!1sen!2s!4v1781761912214!5m2!1sen!2s"
+                        class="map-iframe"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
